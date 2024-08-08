@@ -1,0 +1,37 @@
+#include <iostream>
+#include <iomanip> // For std::setprecision
+using namespace std;
+
+int main() {
+    double hours, rate, pay; // Variables to store the number of hours worked, the hourly rate, and the calculated pay
+
+    // Prompt the user for the number of hours worked
+    cout << "How many hours did you work?" << endl;
+    cin >> hours;
+
+    // Validate the input to ensure hours are non-negative
+    while(hours < 0) {
+        cout << "Hours worked cannot be negative. Please enter a valid number of hours:" << endl;
+        cin >> hours;
+    }
+
+    // Prompt the user for the hourly rate
+    cout << "What is your rate?" << endl;
+    cin >> rate;
+
+    // Validate the input to ensure the rate is non-negative
+    while(rate < 0) {
+        cout << "Rate cannot be negative. Please enter a valid rate:" << endl;
+        cin >> rate;
+    }
+
+    // Calculate the pay
+    pay = hours * rate;
+
+    // Set the output to show two decimal places
+    cout << fixed << setprecision(2);
+    // Display the calculated pay
+    cout << "You have earned $" << pay << endl;
+
+    return 0; // End of program
+}
