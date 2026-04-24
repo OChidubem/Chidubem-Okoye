@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orchid Messages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">✦</div>
+          <div>
+            <h1>Orchid</h1>
+            <p>Private messages, reimagined.</p>
+          </div>
+        </div>
+
+        <section class="identity-card">
+          <h2>Your device identity</h2>
+          <p id="identityStatus">Generating cryptographic identity…</p>
+          <button id="regenerateIdentity" class="ghost-btn">Regenerate keys</button>
+        </section>
+
+        <section class="contact-list" id="contactList" aria-label="Contacts"></section>
+      </aside>
+
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <h2 id="activeContactName">Select a contact</h2>
+            <p id="securityPill">🔒 End-to-end encrypted</p>
+          </div>
+          <button id="clearConversation" class="ghost-btn">Clear thread</button>
+        </header>
+
+        <div class="message-stream" id="messageStream" aria-live="polite"></div>
+
+        <form id="composer" class="composer">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Write an encrypted message…"
+            maxlength="500"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="bubble-wrap">
+        <div class="bubble"></div>
+        <time></time>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
